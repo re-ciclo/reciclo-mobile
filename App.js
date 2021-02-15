@@ -6,8 +6,11 @@ import { StyleSheet, Text, View } from 'react-native';
 // Navegation
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+
+// Stack
+import { createStackNavigator } from '@react-navigation/stack';
+
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -20,6 +23,21 @@ import AReciclo from './src/pages/AReciclo';
 import Informativo from './src/pages/Informativo';
 import Contatos from './src/pages/Contatos';
 import Cadastros from './src/pages/Cadastros';
+
+
+// Ambiente
+import Ambiente from './src/pages/Ambiente';
+
+
+// Pages Ambiente
+import Resultados from './src/pages/Resultados';
+import Eventos from './src/pages/Eventos';
+import Dados from './src/pages/Dados';
+import Mundo from './src/pages/Mundo';
+
+
+// Deslogar
+import Sair from './src/pages/Sair';
 
 export default function App() {
   return (
@@ -78,10 +96,10 @@ export default function App() {
             headerTintColor: '#fff'
           }}
         />
-        
+
         <Drawer.Screen name="Cadastros" component={Cadastros}
           options={{
-            title: "Cadastros",
+            title: "Cadastre-se",
             headerStyle: {
               backgroundColor: '#000'
             },
@@ -90,12 +108,77 @@ export default function App() {
         />
 
 
+        <Drawer.Screen name="Ambiente" component={Ambiente}
+          options={{
+            title: "Ambiente",
+            headerStyle: {
+              backgroundColor: '#f4511e'
 
+            },
+            headerTintColor: '#fff'
+          }}
+        />
 
+        <Drawer.Screen name="Resultados" component={Resultados}
+          options={{
+            title: "Resultados",
+            headerStyle: {
+              backgroundColor: '#f4511e'
+
+            },
+            headerTintColor: '#fff'
+          }}
+        />
+
+        <Drawer.Screen name="Eventos" component={Eventos}
+          options={{
+            title: "Eventos",
+            headerStyle: {
+              backgroundColor: '#f4511e'
+
+            },
+            headerTintColor: '#fff'
+          }}
+        />
+
+        <Drawer.Screen name="Dados" component={Dados}
+          options={{
+            title: "Dados",
+            headerStyle: {
+              backgroundColor: '#f4511e'
+
+            },
+            headerTintColor: '#fff'
+          }}
+        />
+
+        <Drawer.Screen name="Mundo" component={Mundo}
+          options={{
+            title: "Mundo",
+            headerStyle: {
+              backgroundColor: '#f4511e'
+
+            },
+            headerTintColor: '#fff'
+          }}
+        />
+
+        <Drawer.Screen name="Sair" component={Sair}
+          options={{
+            title: "Sair",
+            headerStyle: {
+              backgroundColor: '#f4511e'
+
+            },
+            headerTintColor: '#fff'
+          }}
+        />
 
       </Drawer.Navigator>
+
     </NavigationContainer>
   );
+
 }
 
 const styles = StyleSheet.create({
