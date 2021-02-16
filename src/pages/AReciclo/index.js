@@ -37,8 +37,18 @@ const AReciclo = ({ navigation }) => {
 
     const [img3, setImg3] = React.useState("block");
     const [img4, setImg4] = React.useState("none");
-    
 
+    const [img5, setImg5] = React.useState("block");
+    const [img6, setImg6] = React.useState("none");
+
+    const [img7, setImg7] = React.useState("block");
+    const [img8, setImg8] = React.useState("none");
+    
+    const [img9, setImg9] = React.useState("block");
+    const [img10, setImg10] = React.useState("none");
+
+    const [img11, setImg11] = React.useState("block");
+    const [img12, setImg12] = React.useState("none");
 
     function changeImage() {
         setImg("none");
@@ -58,6 +68,46 @@ const AReciclo = ({ navigation }) => {
     function backImage1() {
         setImg3("block");
         setImg4("none");
+    }
+
+    function changeImage2() {
+        setImg5("none");
+        setImg6("block");
+    }
+
+    function backImage2() {
+        setImg5("block");
+        setImg6("none");
+    }
+
+    function changeImage3() {
+        setImg7("none");
+        setImg8("block");
+    }
+
+    function backImage3() {
+        setImg7("block");
+        setImg8("none");
+    }
+
+    function changeImage4() {
+        setImg9("none");
+        setImg10("block");
+    }
+
+    function backImage4() {
+        setImg9("block");
+        setImg10("none");
+    }
+
+    function changeImage5() {
+        setImg11("none");
+        setImg12("block");
+    }
+
+    function backImage5() {
+        setImg11("block");
+        setImg12("none");
     }
     
 
@@ -138,10 +188,10 @@ const AReciclo = ({ navigation }) => {
                 <View style={styles.block2}>
 
                     <View style={styles.card1}>
-                        <TouchableOpacity onPress={() => changeImage()}>
+                        <TouchableOpacity onPress={() => changeImage2()}>
                             <ImageBackground source={require('../../../assets/green.jpg')} style={styles.bgi}
                                 imageStyle={{ borderRadius: 5 }}
-                                style={{ display: img }}>
+                                style={{ display: img5 }}>
 
                                 <View style={styles.boxtxt} >
                                     <Text style={styles.txt}> Nossos <br /> Valores</Text>
@@ -150,10 +200,10 @@ const AReciclo = ({ navigation }) => {
                             </ImageBackground>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => backImage()}>
+                        <TouchableOpacity onPress={() => backImage2()}>
                             <ImageBackground source={require('../../../assets/bgwhite2.jpg')} style={styles.bgi}
                                 imageStyle={{ borderRadius: 5 }}
-                                style={{ display: img2 }}>
+                                style={{ display: img6 }}>
 
                                 <View>
                                     <Text style={styles.txt2}> Acreditamos que a sociedade pode coexistir e progredir sem que seja
@@ -167,10 +217,10 @@ const AReciclo = ({ navigation }) => {
                     </View>
 
                     <View style={styles.card2}>
-                        <TouchableOpacity onPress={() => changeImage()}>
+                        <TouchableOpacity onPress={() => changeImage3()}>
                             <ImageBackground source={require('../../../assets/green.jpg')} style={styles.bgi}
                                 imageStyle={{ borderRadius: 5 }}
-                                style={{ display: img }}>
+                                style={{ display: img7 }}>
 
                                 <View style={styles.boxtxt} >
                                     <Text style={styles.txt}> Nossa <br /> Visão</Text>
@@ -179,10 +229,10 @@ const AReciclo = ({ navigation }) => {
                             </ImageBackground>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => backImage()}>
+                        <TouchableOpacity onPress={() => backImage3()}>
                             <ImageBackground source={require('../../../assets/bgwhite2.jpg')} style={styles.bgi}
                                 imageStyle={{ borderRadius: 5 }}
-                                style={{ display: img2 }}>
+                                style={{ display: img8 }}>
 
                                 <View  >
                                     <Text style={styles.txt2}>Onde muitos veem lixo nós enxergamos uma oportunidade de melhorar
@@ -201,10 +251,10 @@ const AReciclo = ({ navigation }) => {
 
                     <View style={styles.card1}>
 
-                        <TouchableOpacity onPress={() => changeImage()}>
+                        <TouchableOpacity onPress={() => changeImage4()}>
                             <ImageBackground source={require('../../../assets/green.jpg')} style={styles.bgi}
                                 imageStyle={{ borderRadius: 5 }}
-                                style={{ display: img }}>
+                                style={{ display: img9 }}>
 
                                 <View style={styles.boxtxt} >
                                     <Text style={styles.txt}> Nosso <br /> Objetivo</Text>
@@ -213,10 +263,10 @@ const AReciclo = ({ navigation }) => {
                             </ImageBackground>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => backImage()}>
+                        <TouchableOpacity onPress={() => backImage4()}>
                             <ImageBackground source={require('../../../assets/bgwhite2.jpg')} style={styles.bgi}
                                 imageStyle={{ borderRadius: 5 }}
-                                style={{ display: img2 }}>
+                                style={{ display: img10 }}>
 
                                 <View >
                                     <Text style={styles.txt2}> Converter materias que podem ser reciclados 
@@ -231,10 +281,10 @@ const AReciclo = ({ navigation }) => {
 
                     <View style={styles.card2}>
 
-                        <TouchableOpacity onPress={() => changeImage()}>
+                        <TouchableOpacity onPress={() => changeImage5()}>
                             <ImageBackground source={require('../../../assets/green.jpg')} style={styles.bgi}
                                 imageStyle={{ borderRadius: 5 }}
-                                style={{ display: img }}>
+                                style={{ display: img11 }}>
 
                                 <View style={styles.boxtxt} >
                                     <Text style={styles.txt}> Como <br /> Faremos</Text>
@@ -243,10 +293,10 @@ const AReciclo = ({ navigation }) => {
                             </ImageBackground>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => backImage()}>
+                        <TouchableOpacity onPress={() => backImage5()}>
                             <ImageBackground source={require('../../../assets/bgwhite2.jpg')} style={styles.bgi}
                                 imageStyle={{ borderRadius: 5 }}
-                                style={{ display: img2 }}>
+                                style={{ display: img12 }}>
 
                                 <View >
                                     <Text style={styles.txt2}>
@@ -380,6 +430,8 @@ const styles = StyleSheet.create({
         width: 1,
         height: 150,
         borderRadius: 6,
+        transition: 1,
+        
     },
 
 
