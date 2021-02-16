@@ -107,9 +107,10 @@ const Cadastros = ({ navigation }) => {
                         onChange={(event) => { setConfirmarSenha(event.target.value) }}
 
                     />
+                </View>
 
-
-                    <TextInput
+                <View style={styles.block1}>
+                <TextInput
                         style={styles.input}
                         placeholder="00000-000"
                         value={cep}
@@ -117,56 +118,89 @@ const Cadastros = ({ navigation }) => {
 
                     />
 
-
                     <TextInput
                         style={styles.input}
-                        placeholder="Confirme o logradouro..."
-                        value={logradouro}
-                        onChange={(event) => { setLogradouro(event.target.value) }}
-
-                    />
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Confirme o complemento..."
-                        value={complemento}
-                        onChange={(event) => { setComplemento(event.target.value) }}
-
-                    />
-
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Confirme o bairro..."
+                        placeholder="Digite o bairro..."
                         value={bairro}
                         onChange={(event) => { setBairro(event.target.value) }}
 
                     />
 
-
+                    <View style={styles.block2}>
                     <TextInput
-                        style={styles.input}
-                        placeholder="Confirme a cidade..."
-                        value={cidade}
-                        onChange={(event) => { setCidade(event.target.value) }}
+                        style={{marginTop: 12,
+                            marginRight: 6,
+                            padding: '9px',
+                            width: '70%',
+                            backgroundColor: '#fff',
+                            borderRadius: 5,
+                            alignItems: 'center'}}
+                        placeholder="Digite o logradouro..."
+                        value={logradouro}
+                        onChange={(event) => { setLogradouro(event.target.value) }}
 
                     />
 
                     <TextInput
-                        style={styles.input}
-                        placeholder="UF"
-                        value={uf}
-                        onChange={(event) => { setUf(event.target.value) }}
-
-                    />
-
-                    <TextInput
-                        style={styles.input}
+                        style={{marginTop: 12,
+                             padding: '9px',
+                             alignItems: 'center',
+                             width: '10%',
+                             backgroundColor: '#fff',
+                             borderRadius: 5,
+                            }}
                         placeholder="Nº"
                         value={numero}
                         onChange={(event) => { setNumero(event.target.value) }}
 
+                    />   
+
+                    
+
+                    </View>
+                    
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Digite o complemento..."
+                        value={complemento}
+                        onChange={(event) => { setComplemento(event.target.value) }}
+
+                    />
+                </View>
+
+               
+
+                <View style={styles.block2}>
+                <TextInput
+                        style={{marginTop: 12,
+                            marginRight: 6,
+                            padding: '9px',
+                            width: '70%',
+                            backgroundColor: '#fff',
+                            borderRadius: 5,
+                            alignItems: 'center'}}
+                        placeholder="Digite a cidade..."
+                        value={cidade}
+                        onChange={(event) => { setCidade(event.target.value) }}
                     />
 
-                    <TouchableOpacity
+                    <TextInput
+                        style={{marginTop: 12,
+                            marginRight: 6,
+                            padding: '9px',
+                            width: '10%',
+                            backgroundColor: '#fff',
+                            borderRadius: 5,
+                            alignItems: 'center'}}
+                        placeholder="UF"
+                        value={uf}
+                        onChange={(event) => { setUf(event.target.value) }}
+                    />
+
+                    
+                </View>  
+
+                <TouchableOpacity
                         style={styles.btn}
                         title="Enviar"
                         onPress={enviar}
@@ -174,11 +208,8 @@ const Cadastros = ({ navigation }) => {
                         <Text style={styles.texto}>Enviar</Text>
                     </TouchableOpacity>
 
-                </View>
-
-
-            </View>
-        </View>
+            </View> 
+        </View> 
     );
 }
 
@@ -205,27 +236,33 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        height: '580px'
+        height: '600px',
+        backgroundColor: '#c3c3c3',
     },
 
     block1: {
-
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
         width: '100%',
-        height: '100%',
-        backgroundColor: '#c3c3c3',
+        
+    },
 
+    block2: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        width: '100%',
+        
+       
     },
     input: {
         marginTop: 12,
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '7%',
+        padding: '9px',
         width: '80%',
         backgroundColor: '#fff',
-        borderRadius: 5
+        borderRadius: 5,
+        alignItems: 'center',
+        
     },
     btn: {
         marginTop: 12,
@@ -240,7 +277,5 @@ const styles = StyleSheet.create({
     texto: {
         color: '#fff',
         fontSize: 20
-    }
-
-
+    },
 })
