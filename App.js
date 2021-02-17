@@ -4,7 +4,6 @@ import { StyleSheet, Text, View } from 'react-native';
 
 
 // Navegation
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 

@@ -20,23 +20,53 @@ import FA from 'react-native-vector-icons/FontAwesome';
 import IO from 'react-native-vector-icons/Ionicons';
 
 
+
 const voltar = <IO name="arrow-undo" size={25} color="#fff" />;
+const editar = <IO name="build-outline" size={25} color="#fff" />;
+const excluir = <IO name="trash-outline" size={25} color="#fff" />;
+
+
+const calendario = <IO name="calendar-outline" size={100} color="#fff" />;
+const beneficio = <IO name="gift-outline" size={100} color="#fff" />;
 
 
 // AsyncStorage
 import AsyncStorage from '@react-native-community/async-storage';
 
 
-const Eventos = ({ navigation }) => {
+const Dados = ({ navigation }) => {
 
-    const data = [30, 10, 25, 18, 17];
-    const pieData = data.map((value, index) => ({
-        value,
-        key: `${index}-${value}`,
-        svg: {
-            fill: '#fff000'
-        }
-    }));
+
+    const [img, setImg] = React.useState("block");
+    const [img2, setImg2] = React.useState("none");
+
+    const [img3, setImg3] = React.useState("block");
+    const [img4, setImg4] = React.useState("none");
+
+
+
+
+    function changeImage() {
+        setImg("none");
+        setImg2("block");
+    }
+
+    function backImage() {
+        setImg("block");
+        setImg2("none");
+    }
+
+
+    function changeImage2() {
+        setImg3("none");
+        setImg4("block");
+    }
+
+    function backImage2() {
+        setImg3("block");
+        setImg4("none");
+    }
+
 
     return (
         <View style={styles.container}>
@@ -45,27 +75,112 @@ const Eventos = ({ navigation }) => {
 
                 <View style={styles.areaTituloMenu}>
 
-                    <Text style={styles.textoMenu}>Eventos</Text>
+                    <Text style={styles.texto1}>Eventos</Text>
                 </View>
                 <View style={styles.iconMenu}>
                     <TouchableOpacity onPress={() => navigation.navigate('Ambiente')}>{voltar}</TouchableOpacity>
                 </View>
             </View>
 
+            <View style={styles.main}>
+
+                <View style={styles.block2}>
+                    <Text style={styles.texto3}>Dias de Coletas dos Materias{editar}</Text>
+                </View>
+
+                <View style={styles.block1}>
 
 
 
+                    <View style={styles.card1}>
+
+                        <TouchableOpacity onPress={() => changeImage()}>
+                            <ImageBackground source={require('../../../assets/green.jpg')} style={styles.bgi}
+                                imageStyle={{ borderRadius: 5 }}
+                                style={{ display: img }}>
+
+                                <View style={styles.boxtxt} >
+                                    <Text style={styles.txt}> {calendario} </Text>
+                                </View>
+
+                            </ImageBackground>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => backImage()}>
+                            <ImageBackground source={require('../../../assets/bgwhite2.jpg')} style={styles.bgi}
+                                imageStyle={{ borderRadius: 5 }}
+                                style={{ display: img2 }}>
+
+                                <View>
+                                    <Text style={styles.texto2}>
+                                        • 28/02/2021 às 8h 00 <br/>
+                                        • 07/03/2021 às 8h 00 <br/>
+                                        • 14/03/2021 às 8h 00 <br/>
+                                        • 21/03/2021 às 8h 00 <br/>
+                                    </Text>
+                                </View>
+
+                            </ImageBackground>
+                        </TouchableOpacity>
+
+                    </View>
 
 
 
+                </View>
 
+
+
+                <View style={styles.block2}>
+                    <Text style={styles.texto3}>Períodos de Benefícios{editar}</Text>
+
+                </View>
+
+
+                <View style={styles.block1}>
+
+
+                    <View style={styles.card1}>
+
+                        <TouchableOpacity onPress={() => changeImage2()}>
+                            <ImageBackground source={require('../../../assets/green.jpg')} style={styles.bgi}
+                                imageStyle={{ borderRadius: 5 }}
+                                style={{ display: img3 }}>
+
+                                <View style={styles.boxtxt} >
+                                    <Text style={styles.txt}> {beneficio} </Text>
+                                </View>
+
+                            </ImageBackground>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => backImage2()}>
+                            <ImageBackground source={require('../../../assets/bgwhite2.jpg')} style={styles.bgi}
+                                imageStyle={{ borderRadius: 5 }}
+                                style={{ display: img4 }}>
+
+                                <View>
+                                    <Text style={styles.texto2}>
+                                        • 28/08/2021 Pintura Geral <br/>
+                                        • 07/12/2021 Cestas Básicas <br/>
+                                        • 14/01/2022 Materias de Construção <br/>
+                                        • 21/03/2022 Aniversário do Projeto <br/>
+                                </Text>
+                                </View>
+
+                            </ImageBackground>
+                        </TouchableOpacity>
+
+                    </View>
+
+                </View>
+
+            </View>
         </View>
-
-
     );
 }
 
-export default Eventos;
+export default Dados;
 
 const styles = StyleSheet.create({
     container: {
@@ -84,15 +199,9 @@ const styles = StyleSheet.create({
         height: 40
     },
     areaTituloMenu: {
-        width: '50%',
+        width: '53%',
         justifyContent: 'center',
-        marginEnd: 2,
-    },
-
-    textoMenu: {
-        color: '#fff',
-        fontSize: 20,
-        fontFamily: 'Arial'
+        marginEnd: 2
     },
     areaIconMenu: {
         width: '10%'
@@ -101,73 +210,124 @@ const styles = StyleSheet.create({
         fontSize: 32
     },
     main: {
-
-        justifyContent: 'space-between',
+        marginTop: 20,
+        justifyContent: 'space-around',
         alignItems: 'center',
-        height: 1000
-    },
-    btnArea: {
-        marginBottom: 10,
-        width: '90%',
-        height: '5%',
-        backgroundColor: "#fff",
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-
+        height: 550,
 
     },
-    block1: {
-
+    logo: {
         justifyContent: 'center',
-        // justifyContent: 'flex-start',
-        // alignItems: 'center',
-        // flexDirection: 'column',
+        alignItems: 'center',
+        flexDirection: 'column',
+        width: 150,
+        height: 150,
+        backgroundColor: '#fff',
+        borderRadius: 100,
+        shadowOpacity: 1,
+        shadowRadius: 6.68,
+        elevation: 11,
+        marginBottom: 70
+    },
+    input: {
+        marginTop: 12,
+        paddingLeft: 5,
+        fontSize: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '7%',
+        width: '80%',
+        backgroundColor: '#fff',
         borderRadius: 5,
         shadowOpacity: 1,
         shadowRadius: 6.68,
         elevation: 11,
-        borderRadius: 5,
-        width: '90%',
-        height: '25%'
+        borderRadius: 5
     },
 
-
-
-    btn: {
-        marginTop: 12,
-        width: '20%',
-        height: '90%',
-        borderRadius: 5,
-        alignItems: 'center',
-        backgroundColor: '#00B9A3',
-        justifyContent: 'center',
-        color: '#fff',
-        borderRadius: 5,
-        shadowOpacity: 1,
-        shadowRadius: 6.68,
-        elevation: 11
-    },
     texto1: {
-        color: '#000',
-        fontSize: 20,
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start'
-
+        color: '#fff',
+        fontSize: 20
     },
     texto2: {
-        marginTop: 12,
         fontSize: 16,
         color: '#00B9A3'
+    },
+    texto3: {
+        fontSize: 20,
+        color: '#000',
+        paddingLeft: 15
     },
     footer: {
         justifyContent: 'space-around',
         alignItems: 'center',
         width: '100%',
         // backgroundImage: 'linear-gradient(#fff, #000)',
-        height: '8%',
+        height: 120,
         flexDirection: 'row'
 
+    },
+    block1: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingLeft: 10,
+        width: '90%',
+        height: '35%',
+        borderRadius: 5,
+        shadowOpacity: 1,
+        shadowRadius: 6.68,
+        elevation: 11
+    },
+    block2: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '90%',
+        height: '6%',
+        borderRadius: 5,
+        shadowOpacity: 1,
+        shadowRadius: 6.68,
+        elevation: 11
+    },
+    btn: {
+        width: "45%",
+        height: 50,
+        borderRadius: 5,
+        alignItems: 'center',
+        backgroundColor: '#00B9A3'
+    },
+    btn2: {
+        width: '45%',
+        height: 30,
+        borderRadius: 5,
+        alignItems: 'center',
+        backgroundColor: '#B9A300'
+
+    },
+    card1: {
+        marginRight:10,
+        width: "90%",
+        height: "90%",
+        borderRadius: 5,
+        borderRadius: 5,
+        shadowOpacity: 0.6,
+        shadowRadius: 6.68,
+        elevation: 10,
+        justifyContent:'center',
+        alignItems:'center' 
+    },
+    bgi: {
+        width: 1,
+        height: 150,
+        borderRadius: 6        
+        // transition: 1,
+
+    },
+    boxtxt: {
+        justifyContent: "center",
+        alignItems: 'center',
+        height: 175,
+        width: 282
     }
 
 })
