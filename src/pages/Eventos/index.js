@@ -41,8 +41,15 @@ const Eventos = ({ navigation }) => {
     return (
         <View style={styles.container}>
 
-            <View style={styles.menu}>
-                <TouchableOpacity onPress={() => navigation.navigate('Ambiente')}>{voltar}</TouchableOpacity>
+            <View style={styles.areaMenu}>
+
+                <View style={styles.areaTituloMenu}>
+
+                    <Text style={styles.textoMenu}>Eventos</Text>
+                </View>
+                <View style={styles.iconMenu}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Ambiente')}>{voltar}</TouchableOpacity>
+                </View>
             </View>
 
 
@@ -68,12 +75,27 @@ const styles = StyleSheet.create({
         height: '100%',
         flexDirection: 'column'
     },
-    menu: {
+    areaMenu: {
+        flexDirection: 'row',
         paddingRight: 5,
         backgroundColor: '#00B9A3',
-        justifyContent: 'center',
-        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
         height: 40
+    },
+    areaTituloMenu: {
+        width: '50%',
+        justifyContent: 'center',
+        marginEnd: 2,
+    },
+
+    textoMenu: {
+        color: '#fff',
+        fontSize: 20,
+        fontFamily: 'Arial'
+    },
+    areaIconMenu: {
+        width: '10%'
     },
     h1: {
         fontSize: 32
@@ -142,7 +164,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         width: '100%',
-        backgroundImage: 'linear-gradient(#fff, #000)',
+        // backgroundImage: 'linear-gradient(#fff, #000)',
         height: '8%',
         flexDirection: 'row'
 
