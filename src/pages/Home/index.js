@@ -21,6 +21,7 @@ import IO from 'react-native-vector-icons/Ionicons';
 
 
 
+const alerta = <IO name="alert-circle-outline" size={30} color="orange" />;
 const menu = <IO name="menu" size={30} color="#fff" />;
 
 
@@ -41,19 +42,29 @@ const Home = ({ navigation }) => {
     const [email, setEmail] = React.useState("");
     const [senha, setSenha] = React.useState("");
     const [teste, setTeste] = React.useState("");
-
+    const [irregular, setIrregular] = React.useState(false);
 
     function acessar() {
 
+        if(email.length > 3){
+            const verifica = [...email];
+        let i = 0;
+        let palavra = "";
+        console.log(verifica);
+        while( verifica[i] !== '@'){
+           palavra += verifica[i];
+           i++;
+        }
+
+            
         
+
          navigation.navigate('Ambiente')
 
-         AsyncStorage.setItem('nome', 'Fulano');
-         AsyncStorage.setItem('email', 'fulano@gmail.com');
+         AsyncStorage.setItem('nome', palavra);
+         AsyncStorage.setItem('email', email);
          AsyncStorage.setItem('telefone', '(11) 3333-3333');
          AsyncStorage.setItem('senha', '•••••');
-
-
          AsyncStorage.setItem('cep', '05000-090');
          AsyncStorage.setItem('bairro', 'Maracanã');
          AsyncStorage.setItem('logradouro', 'Rua Vitória');
@@ -62,6 +73,14 @@ const Home = ({ navigation }) => {
          AsyncStorage.setItem('cidade', 'São Paulo');
          AsyncStorage.setItem('uf', 'SP');
 
+        setEmail("");
+        setSenha("");
+
+        }else{
+            setTimeout( () => setIrregular(false), 3000);
+            setIrregular(true);
+        }
+        
 
 
     }
@@ -87,7 +106,7 @@ const Home = ({ navigation }) => {
                         </ImageBackground>
 
                     
-
+                    { irregular && <Text style={styles.textoAlerta}>Verifique os campos {alerta}</Text>}
                     <TextInput
                         style={styles.input}
                         placeholder="Digite o seu email..."
@@ -220,8 +239,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         width: '100%',
-        backgroundImage: 'linear-gradient(#fff, #000)',
-        height: '120px',
+        // backgroundImage: 'linear-gradient(#fff, #000)',
+        height: 120,
         flexDirection: 'row'
 
     },
@@ -271,6 +290,11 @@ const styles = StyleSheet.create({
         shadowOpacity: 1,
         shadowRadius: 6.68,
         elevation: 11,
+    },
+    textoAlerta:{
+        color: 'orange',
+        fontSize: 16
     }
+
 
 })
