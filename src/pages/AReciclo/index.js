@@ -43,7 +43,7 @@ const AReciclo = ({ navigation }) => {
 
     const [img7, setImg7] = React.useState("block");
     const [img8, setImg8] = React.useState("none");
-    
+
     const [img9, setImg9] = React.useState("block");
     const [img10, setImg10] = React.useState("none");
 
@@ -109,14 +109,21 @@ const AReciclo = ({ navigation }) => {
         setImg11("block");
         setImg12("none");
     }
-    
+
 
 
     return (
         <View style={styles.container}>
 
-            <View style={styles.menu}>
-                <TouchableOpacity onPress={() => navigation.openDrawer()}>{menu}</TouchableOpacity>
+            <View style={styles.areaMenu}>
+
+                <View style={styles.areaTituloMenu}>
+
+                    <Text style={styles.textoMenu}>A Reciclo</Text>
+                </View>
+                <View style={styles.iconMenu}>
+                    <TouchableOpacity onPress={() => navigation.openDrawer()}>{menu}</TouchableOpacity>
+                </View>
             </View>
 
             <View style={styles.main}>
@@ -269,7 +276,7 @@ const AReciclo = ({ navigation }) => {
                                 style={{ display: img10 }}>
 
                                 <View >
-                                    <Text style={styles.txt2}> Converter materias que podem ser reciclados 
+                                    <Text style={styles.txt2}> Converter materias que podem ser reciclados
                                     em benefícios a moradores da comunidade
                                 </Text>
                                 </View>
@@ -300,8 +307,8 @@ const AReciclo = ({ navigation }) => {
 
                                 <View >
                                     <Text style={styles.txt2}>
-                                        Com sua ajuda! <br/>
-                                        Seja a mudança que você quer ver no mundo!<br/>
+                                        Com sua ajuda! <br />
+                                        Seja a mudança que você quer ver no mundo!<br />
                                         Mahatma Gandhi
                                     </Text>
                                 </View>
@@ -330,11 +337,27 @@ const styles = StyleSheet.create({
         flexDirection: 'column'
     },
 
-    menu: {
+    areaMenu: {
+        flexDirection: 'row',
+        paddingRight: 5,
         backgroundColor: '#00B9A3',
         justifyContent: 'flex-end',
-        alignItems: 'flex-end',
-        height: 40,
+        alignItems: 'center',
+        height: 40
+    },
+    areaTituloMenu: {
+        width: '53%',
+        justifyContent: 'center',
+        marginEnd: 2,
+    },
+
+    textoMenu: {
+        color: '#fff',
+        fontSize: 20,
+        fontFamily: 'Arial'
+    },
+    areaIconMenu: {
+        width: '10%'
     },
 
     h1: {
@@ -410,7 +433,7 @@ const styles = StyleSheet.create({
         color: '#00B9A3',
         height: 118,
         marginLeft: 3,
-        marginRight:3,
+        marginRight: 3,
         display: 'flex',
     },
 
@@ -423,15 +446,15 @@ const styles = StyleSheet.create({
     boxtxt2: {
         justifyContent: "center",
         alignItems: 'center'
-        
+
     },
 
     bgi: {
         width: 1,
         height: 150,
-        borderRadius: 6,
-        transition: 1,
-        
+        borderRadius: 6
+        // transition: 1,
+
     },
 
 
