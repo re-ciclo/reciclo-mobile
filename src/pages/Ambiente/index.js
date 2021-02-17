@@ -1,14 +1,15 @@
 // Libraries
 
 import React from 'react';
-import {StyleSheet,
-        Text,
-        View,
-        Image,
-        TextInput,
-        TouchableOpacity,
-        StatusBar
-    } from 'react-native';
+import {
+    StyleSheet,
+    Text,
+    View,
+    Image,
+    TextInput,
+    TouchableOpacity,
+    StatusBar
+} from 'react-native';
 
 
 // Icones 
@@ -35,7 +36,7 @@ const sair = <IO name="log-out-outline" size={25} color="#00B9A3" />;
 import AsyncStorage from '@react-native-community/async-storage';
 
 
-const Ambiente = ({navigation}) =>{
+const Ambiente = ({ navigation }) => {
 
     const [verifica, setVerifica] = React.useState("");
     const [nome, setNome] = React.useState("");
@@ -45,164 +46,177 @@ const Ambiente = ({navigation}) =>{
 
 
 
-    async function verificar(){
+    async function verificar() {
         const name = await AsyncStorage.getItem('nome');
         setVerifica(name);
         setNome(name)
         console.log(name);
 
-        // if( name == "Fulano"){   //undefined AsyncStorage.getItem('user') !== '10' || AsyncStorage.getItem('user') !== 10
-        //     AsyncStorage.removeItem('user');
-        //     navigation.navigate('Home');
-            
-        //  }
-        
+
     }
 
-    
 
-    function deslogar(){
+
+    function deslogar() {
         // AsyncStorage.multiRemove(['user']);
         AsyncStorage.removeItem('user');
         navigation.navigate('Home');
     }
 
-    
 
-    
-     
-        return(
-            <View style={styles.container} onLoad={verificar()}>
-    
-                <View style={styles.menu}>
-                        <TouchableOpacity onPress={() => navigation.openDrawer()}>{menu}</TouchableOpacity>
+
+
+
+    return (
+        <>
+         <StatusBar  hidden/>
+        <View style={styles.container} onLoad={verificar()}>
+
+            <View style={styles.areaMenu}>
+
+                <View style={styles.areaTituloMenu}>
+
+                    <Text style={styles.textoMenu}>Ambiente</Text>
                 </View>
-    
-                <View style={styles.main}>
-                    <View style={styles.block1}>
-                        <Text style={styles.h1}>Seja bem vindo(a) {nome}</Text>
-                        <Text style={styles.p}>Fique à vontade e acesse os resultados, eventos, seus dados e notícias da comunidade.</Text>
-                    </View>  
-                    
-                        <View style={styles.block2}>
-                            <View style={styles.card1}>
-                                <TouchableOpacity onPress={() => navigation.navigate('Resultados')}>{resultados}</TouchableOpacity>
-                            </View>
-                            <View style={styles.card2}>
-                                <TouchableOpacity onPress={() => navigation.navigate('Eventos')}>{eventos}</TouchableOpacity>
-                            </View>
-                        </View>
-                        <View style={styles.block3}>
-    
-                            <View style={styles.card1}>
-                                <TouchableOpacity onPress={() => navigation.navigate('Dados')}>{dados}</TouchableOpacity>
-                            </View>
-                            <View style={styles.card2}>
-                                <TouchableOpacity onPress={() => navigation.navigate('Mundo')}>{mundo}</TouchableOpacity>
-                            </View>
-    
-                        </View>
-                       
-                        
-                        
-                        <TouchableOpacity style={styles.sair} onPress={deslogar}><Text>{sair}</Text></TouchableOpacity>
-                        {/* <Text>{valor}</Text> */}
-                        
-    
+                <View style={styles.iconMenu}>
+                    <TouchableOpacity onPress={() => navigation.openDrawer()}>{menu}</TouchableOpacity>
                 </View>
-    
-               
-    
             </View>
-        );
-    }
+
+            <View style={styles.main}>
+                <View style={styles.block1}>
+                    <Text style={styles.h1}>Seja bem vindo(a) {nome}</Text>
+                    <Text style={styles.p}>Fique à vontade e acesse os resultados, eventos, seus dados e notícias da comunidade.</Text>
+                </View>
+
+                <View style={styles.block2}>
+                    <View style={styles.card1}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Resultados')}>{resultados}</TouchableOpacity>
+                    </View>
+                    <View style={styles.card2}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Eventos')}>{eventos}</TouchableOpacity>
+                    </View>
+                </View>
+                <View style={styles.block3}>
+
+                    <View style={styles.card1}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Dados')}>{dados}</TouchableOpacity>
+                    </View>
+                    <View style={styles.card2}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Mundo')}>{mundo}</TouchableOpacity>
+                    </View>
+
+                </View>
+
+                <TouchableOpacity style={styles.sair} onPress={deslogar}><Text>{sair}</Text></TouchableOpacity>
+            </View>
+        </View>
+        </>
+    );
+}
 
 export default Ambiente;
 
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
+    container: {
+        flex: 1,
         backgroundColor: '#fff',
-        width:'100%',
-        height:'100%',
-        flexDirection:'column'
+        width: '100%',
+        height: '100%',
+        flexDirection: 'column'
     },
-    menu:{
-        backgroundColor:'#00B9A3',
+    areaMenu: {
+        flexDirection: 'row',
+        paddingRight: 5,
+        backgroundColor: '#00B9A3',
         justifyContent: 'flex-end',
-        alignItems: 'flex-end',
-        height: 40,
+        alignItems: 'center',
+        height: 40
     },
-   
-    main:{
-        
+    areaTituloMenu: {
+        width: '51%',
+        justifyContent: 'center',
+        marginEnd: 2,
+    },
+
+    textoMenu: {
+        color: '#fff',
+        fontSize: 20,
+        fontFamily: 'Arial'
+    },
+    areaIconMenu: {
+        width: '10%'
+    }
+    ,
+    main: {
+
         justifyContent: 'flex-start',
         alignItems: 'center',
         height: 580
     },
-    h1:{
-        
-        fontSize:30,
+    h1: {
+
+        fontSize: 30,
     },
-    p:{
-        
+    p: {
+
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 15,
         paddingLeft: 20,
         paddingRight: 10
     },
-    block1:{
-        
+    block1: {
+
         justifyContent: 'flex-start',
         alignItems: 'center',
-        width:'100%',
-        height:'20%',
-        flexDirection:'column'
-        
+        width: '100%',
+        height: '20%',
+        flexDirection: 'column'
+
     },
-    card1:{
+    card1: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor:'#00B9A3',
-        width:'40%',
-        height:'70%',
-        borderRadius:5,
+        backgroundColor: '#00B9A3',
+        width: '40%',
+        height: '70%',
+        borderRadius: 5,
         shadowOpacity: 1,
         shadowRadius: 6.68,
         elevation: 11,
     },
-    card2:{
+    card2: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor:'#00B9A3',
-        width:'40%',
-        height:'70%',
-        borderRadius:5,
+        backgroundColor: '#00B9A3',
+        width: '40%',
+        height: '70%',
+        borderRadius: 5,
         shadowOpacity: 1,
         shadowRadius: 6.68,
         elevation: 11,
     },
-    block2:{
+    block2: {
         justifyContent: 'space-around',
         alignItems: 'center',
-        width:'100%',
-        height:'35%',
-        flexDirection:'row'
+        width: '100%',
+        height: '35%',
+        flexDirection: 'row'
     },
-    block3:{
+    block3: {
         justifyContent: 'space-around',
         alignItems: 'center',
-        width:'100%',
-        height:'32%', 
-        flexDirection:'row'
+        width: '100%',
+        height: '32%',
+        flexDirection: 'row'
     },
-    sair:{
-        borderRadius:5,
+    sair: {
+        borderRadius: 5,
         shadowOpacity: 1,
         shadowRadius: 6.68,
         elevation: 11,
     }
-   
+
 
 })
