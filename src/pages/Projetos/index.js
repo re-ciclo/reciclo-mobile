@@ -33,9 +33,21 @@ const Projetos = ({navigation}) =>{
     return(
         <View style={styles.container}>
 
-            <View style={styles.menu}>
-                    <TouchableOpacity onPress={() => navigation.openDrawer()}>{menu}</TouchableOpacity>
-            </View>
+        <View style={styles.areaMenu}>
+                 
+                 <View style={styles.areaTituloMenu}>
+                         
+                         <Text style={styles.textoMenu}>Projetos</Text>
+                 </View>
+                 <View style={styles.iconMenu}>
+                      <TouchableOpacity onPress={() => navigation.openDrawer()}>{menu}</TouchableOpacity>
+                 </View>
+             </View>
+
+                
+
+
+
 
             <View style={styles.main}>
                     {/* <Text style={styles.h1}>Projetos</Text> */}
@@ -98,23 +110,7 @@ const Projetos = ({navigation}) =>{
 
              </View>
                     
-                    
-                    
-                    
-                    
-                    
             </View>
-
-
-            
-
-            {/* <View style={styles.footer}>
-
-            <View style={styles.box4}><TouchableOpacity onPress={() => navigation.navigate('Projetos')}>{home}</TouchableOpacity></View>
-                    <View style={styles.box1}><TouchableOpacity onPress={() => navigation.navigate('Informativo')}>{rocket}</TouchableOpacity></View>
-                    <View style={styles.box2}><TouchableOpacity onPress={() => navigation.navigate('AReciclo')}>{book}</TouchableOpacity></View>
-                    <View style={styles.box3}><TouchableOpacity onPress={() => navigation.navigate('Contatos')}>{person}</TouchableOpacity></View>
-            </View> */}
 
         </View>
     );
@@ -130,11 +126,27 @@ const styles = StyleSheet.create({
         height:'100%',
         flexDirection:'column'
     },
-    menu:{
-        backgroundColor:'#00B9A3',
+    areaMenu:{
+        flexDirection:'row',
+        paddingRight: 5,
+        backgroundColor: '#00B9A3',
         justifyContent: 'flex-end',
-        alignItems: 'flex-end',
-        height: '40px',
+        alignItems: 'center',
+        height: 40
+    },
+areaTituloMenu: {
+        width:'48%',
+        justifyContent:'center',
+        marginEnd: 2,
+    },
+
+textoMenu:{
+        color: '#fff',
+        fontSize: 20,
+        fontFamily:'Arial'
+    },
+areaIconMenu:{
+        width:'10%'
     },
     h1:{
         fontSize:32
@@ -142,7 +154,7 @@ const styles = StyleSheet.create({
     main:{
         justifyContent: 'space-between',
         alignItems: 'center',
-        height: '580px'
+        height: 580
     },
     block1:{
         
@@ -156,6 +168,7 @@ const styles = StyleSheet.create({
 
     },
     block2:{
+        paddingLeft:10,
         justifyContent: 'center',
         alignItems: 'center',
         width:'100%',
