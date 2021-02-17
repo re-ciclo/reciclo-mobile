@@ -6,7 +6,8 @@ import {
     View,
     TouchableOpacity,
     StatusBar,
-    Linking
+    Linking,
+    Text
 } from 'react-native';
 import { Avatar, Card, Title, Paragraph } from 'react-native-paper';
 
@@ -30,9 +31,16 @@ const Mundo = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.menu}>
-                <TouchableOpacity onPress={() => navigation.navigate('Ambiente')}>{voltar}</TouchableOpacity>
-            </View >
+            <View style={styles.areaMenu}>
+                 
+                 <View style={styles.areaTituloMenu}>
+                         
+                         <Text style={styles.textoMenu}>Mundo</Text>
+                 </View>
+                 <View style={styles.iconMenu}>
+                      <TouchableOpacity onPress={() => navigation.navigate('Ambiente')}>{voltar}</TouchableOpacity>
+                 </View>
+             </View>
 
             <Card style={styles.border}>
                 <Card.Content>
@@ -133,16 +141,31 @@ const styles = StyleSheet.create({
         height: '100%',
         flexDirection: 'column',
         marginBottom: 10,
-        marginTop: 10,
         marginLeft: 2,
         marginRight: 2
     },
-    menu: {
+    areaMenu:{
+        
+        flexDirection:'row',
         paddingRight: 5,
         backgroundColor: '#00B9A3',
-        justifyContent: 'center',
-        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
         height: 40
+    },
+areaTituloMenu: {
+        width:'48%',
+        justifyContent:'center',
+        marginEnd: 2,
+    },
+
+textoMenu:{
+        color: '#fff',
+        fontSize: 20,
+        fontFamily:'Arial'
+    },
+areaIconMenu:{
+        width:'10%'
     },
     cardImg: {
         marginLeft: 5,
