@@ -46,7 +46,7 @@ const Ambiente = ({navigation}) =>{
 
 
     async function verificar(){
-        const name = await AsyncStorage.getItem('user');
+        const name = await AsyncStorage.getItem('nome');
         setVerifica(name);
         setNome(name)
         console.log(name);
