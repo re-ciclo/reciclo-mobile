@@ -58,27 +58,27 @@ const Resultados = ({ navigation }) => {
     const [data, setData] = React.useState([
         {
             key: 1,
-            amount: 50,
+            amount: 20,
             svg: { fill: '#A9A9A9' },
         },
         {
             key: 2,
-            amount: 50,
+            amount: 23,
             svg: { fill: '#4682B4' }
         },
         {
             key: 3,
-            amount: 40,
+            amount: 17,
             svg: { fill: '#E9967A' }
         },
         {
             key: 4,
-            amount: 95,
+            amount: 30,
             svg: { fill: '#B0E0E6' }
         },
         {
             key: 5,
-            amount: 35,
+            amount: 10,
             svg: { fill: '#2F4F4F' }
         }
     ]);
@@ -112,11 +112,11 @@ const Resultados = ({ navigation }) => {
     const [data2, setData2] = React.useState([
         {
             month: new Date(2015, 0, 1),
-            aluminio: 200,
-            papel: 100,
-            plastico: 400,
-            pet: 500,
-            vidro: 500
+            aluminio: 100,
+            papel: 115,
+            plastico: 85,
+            pet: 150,
+            vidro: 50
         }
 
     ])
@@ -133,7 +133,7 @@ const Resultados = ({ navigation }) => {
 
     // New Bar
 
-    const [data3, setData3] = React.useState([50]);
+    const [data3, setData3] = React.useState([450]);
 
     const axesSvg = { fontSize: 15, fill: 'grey' };
     const verticalContentInset = { top: 10, bottom: 10 }
@@ -148,39 +148,32 @@ const Resultados = ({ navigation }) => {
     const dataOthers = [30, 10, 25, 18, 17];
 
 
-
-
-
-
-
-
-
     function semana1() {
         // Pie
         setData([
             {
                 key: 1,
-                amount: 50,
+                amount: 20,
                 svg: { fill: '#A9A9A9' },
             },
             {
                 key: 2,
-                amount: 50,
+                amount: 23,
                 svg: { fill: '#4682B4' }
             },
             {
                 key: 3,
-                amount: 40,
+                amount: 17,
                 svg: { fill: '#E9967A' }
             },
             {
                 key: 4,
-                amount: 95,
+                amount: 30,
                 svg: { fill: '#B0E0E6' }
             },
             {
                 key: 5,
-                amount: 35,
+                amount: 10,
                 svg: { fill: '#2F4F4F' }
             }
         ]);
@@ -191,16 +184,16 @@ const Resultados = ({ navigation }) => {
         setData2([
             {
                 month: new Date(2015, 0, 1),
-                aluminio: 3840,
-                papel: 1920,
-                plastico: 960,
-                pet: 400,
-                vidro: 200
+                aluminio: 100,
+                papel: 115,
+                plastico: 85,
+                pet: 150,
+                vidro: 50
             }
         ])
 
 
-        setData3([50])
+        setData3([440]);
 
 
         setArrecadado(400);
@@ -221,27 +214,27 @@ const Resultados = ({ navigation }) => {
         setData([
             {
                 key: 1,
-                amount: 40,
+                amount: 18,
                 svg: { fill: '#A9A9A9' },
             },
             {
                 key: 2,
-                amount: 60,
+                amount: 13,
                 svg: { fill: '#4682B4' }
             },
             {
                 key: 3,
-                amount: 20,
+                amount: 27,
                 svg: { fill: '#E9967A' }
             },
             {
                 key: 4,
-                amount: 75,
+                amount: 30,
                 svg: { fill: '#B0E0E6' }
             },
             {
                 key: 5,
-                amount: 55,
+                amount: 12,
                 svg: { fill: '#2F4F4F' }
             }
         ]);
@@ -251,24 +244,24 @@ const Resultados = ({ navigation }) => {
         setData2([
             {
                 month: new Date(2015, 0, 1),
-                aluminio: 3840,
-                papel: 1920,
-                plastico: 960,
-                pet: 400,
-                vidro: 200
+                aluminio: 100,
+                papel: 115,
+                plastico: 85,
+                pet: 150,
+                vidro: 50
             },
             {
                 month: new Date(2015, 1, 1),
-                aluminio: 1600,
-                papel: 1440,
-                plastico: 960,
-                pet: 400,
-                vidro: 300
-            }
+                aluminio: 90,
+                papel: 65,
+                plastico: 135,
+                pet: 150,
+                vidro: 60
+            },
         ])
 
 
-        setData3([50, 10])
+        setData3([440, 441]);
 
 
         setArrecadado(800);
@@ -283,27 +276,27 @@ const Resultados = ({ navigation }) => {
         setData([
             {
                 key: 1,
-                amount: 30,
+                amount: 22,
                 svg: { fill: '#A9A9A9' },
             },
             {
                 key: 2,
-                amount: 50,
+                amount: 15,
                 svg: { fill: '#4682B4' }
             },
             {
                 key: 3,
-                amount: 40,
+                amount: 25,
                 svg: { fill: '#E9967A' }
             },
             {
                 key: 4,
-                amount: 105,
+                amount: 35,
                 svg: { fill: '#B0E0E6' }
             },
             {
                 key: 5,
-                amount: 25,
+                amount: 3,
                 svg: { fill: '#2F4F4F' }
             }
         ]);
@@ -311,33 +304,33 @@ const Resultados = ({ navigation }) => {
         setData2([
             {
                 month: new Date(2015, 0, 1),
-                aluminio: 3840,
-                papel: 1920,
-                plastico: 960,
-                pet: 400,
-                vidro: 200
+                aluminio: 100,
+                papel: 115,
+                plastico: 85,
+                pet: 150,
+                vidro: 50
             },
             {
                 month: new Date(2015, 1, 1),
-                aluminio: 1600,
-                papel: 1440,
-                plastico: 960,
-                pet: 400,
-                vidro: 300
+                aluminio: 90,
+                papel: 65,
+                plastico: 135,
+                pet: 150,
+                vidro: 60
             },
             {
                 month: new Date(2015, 2, 1),
-                aluminio: 640,
-                papel: 960,
-                plastico: 3640,
-                pet: 400,
-                vidro: 245
-            }
+                aluminio: 110,
+                papel: 75,
+                plastico:125,
+                pet: 175,
+                vidro: 15
+            },
 
         ])
 
 
-        setData3([50, 10, 40]);
+        setData3([440, 440, 455]);
 
 
         setArrecadado(1400);
@@ -354,27 +347,27 @@ const Resultados = ({ navigation }) => {
         setData([
             {
                 key: 1,
-                amount: 50,
+                amount: 14,
                 svg: { fill: '#A9A9A9' },
             },
             {
                 key: 2,
-                amount: 50,
+                amount: 10,
                 svg: { fill: '#4682B4' }
             },
             {
                 key: 3,
-                amount: 35,
+                amount: 26,
                 svg: { fill: '#E9967A' }
             },
             {
                 key: 4,
-                amount: 45,
+                amount: 25,
                 svg: { fill: '#B0E0E6' }
             },
             {
                 key: 5,
-                amount: 55,
+                amount: 25,
                 svg: { fill: '#2F4F4F' }
             }
         ]);
@@ -382,41 +375,41 @@ const Resultados = ({ navigation }) => {
         setData2([
             {
                 month: new Date(2015, 0, 1),
-                aluminio: 3840,
-                papel: 1920,
-                plastico: 960,
-                pet: 400,
-                vidro: 200
+                aluminio: 100,
+                papel: 115,
+                plastico: 85,
+                pet: 150,
+                vidro: 50
             },
             {
                 month: new Date(2015, 1, 1),
-                aluminio: 1600,
-                papel: 1440,
-                plastico: 960,
-                pet: 400,
-                vidro: 300
+                aluminio: 90,
+                papel: 65,
+                plastico: 135,
+                pet: 150,
+                vidro: 60
             },
             {
                 month: new Date(2015, 2, 1),
-                aluminio: 640,
-                papel: 960,
-                plastico: 3640,
-                pet: 400,
-                vidro: 245
+                aluminio: 110,
+                papel: 75,
+                plastico:125,
+                pet: 175,
+                vidro: 15
             },
             {
                 month: new Date(2015, 3, 1),
-                aluminio: 3320,
-                papel: 480,
-                plastico: 640,
-                pet: 400,
-                vidro: 252
+                aluminio: 70,
+                papel: 50,
+                plastico: 130,
+                pet: 125,
+                vidro: 125
             },
 
         ]);
 
 
-        setData3([50, 10, 40, 95]);
+        setData3([440, 441, 455, 450]);
 
 
         setArrecadado(2000);
@@ -441,7 +434,7 @@ const Resultados = ({ navigation }) => {
                  
                 <View style={styles.areaTituloMenu}>
                         
-                        <Text style={styles.textoMenu}></Text>
+                        <Text style={styles.textoMenu}>Resutados</Text>
                 </View>
                 <View style={styles.iconMenu}>
                      <TouchableOpacity onPress={() => navigation.navigate('Ambiente')}>{voltar}</TouchableOpacity>
@@ -489,10 +482,10 @@ const Resultados = ({ navigation }) => {
 
 
 
-                    <View style={{ flexDirection: 'row', height: 200 }}>
+                    <View style={{ flexDirection: 'row', height: 220 }}>
                         <StackedAreaChart
                             style={{ flex: 1 }}
-                            contentInset={{ top: 10, bottom: 10 }}
+                            contentInset={{ top: 12, bottom: 10 }}
                             data={data2}
                             keys={keys}
                             colors={colors}
@@ -503,9 +496,9 @@ const Resultados = ({ navigation }) => {
                         <YAxis
                             style={{ position: 'absolute', top: 0, bottom: 0 }}
                             data={StackedAreaChart.extractDataPoints(data2, keys)}
-                            contentInset={{ top: 10, bottom: 10 }}
+                            contentInset={{ top: 14, bottom: 10 }}
                             svg={{
-                                fontSize: 20,
+                                fontSize: 18,
                                 fill: 'black',
                                 stroke: 'black',
                                 strokeWidth: 0.1,
@@ -556,7 +549,7 @@ const Resultados = ({ navigation }) => {
                 </View>
 
 
-                <View style={styles.block1}>
+                {/* <View style={styles.block1}>
 
 
 
@@ -564,12 +557,12 @@ const Resultados = ({ navigation }) => {
 
 
 
-                </View>
+                </View> */}
 
 
                 <View style={styles.block1}>
                     <View style={styles.areaTitulo}>
-                        <Text style={styles.h2}>Pitura dos Apartamentos</Text>
+                        <Text style={styles.h2}>Pintura dos Apartamentos</Text>
                         <Text style={styles.h2}>Meta:2.000</Text>
                     </View>
 
@@ -609,9 +602,9 @@ const styles = StyleSheet.create({
         height: 40
     },
     areaTituloMenu: {
-        width:'45%',
+        width:'53%',
         justifyContent:'center',
-        marginEnd: 2
+        marginEnd: 2,
     },
     areaIconMenu:{
         width:'10%'
@@ -744,7 +737,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         width: '100%',
-        backgroundImage: 'linear-gradient(#fff, #000)',
+        // backgroundImage: 'linear-gradient(#fff, #000)',
         height: '8%',
         flexDirection: 'row'
 
