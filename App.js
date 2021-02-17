@@ -78,7 +78,7 @@ export default function App() {
 
         <Drawer.Screen name="Informativo" component={Informativo}
           options={{
-            title: "Informativo",
+            title: "Informativos",
             headerStyle: {
               backgroundColor: '#000'
             },
@@ -89,7 +89,7 @@ export default function App() {
 
         <Drawer.Screen name="Contatos" component={Contatos}
           options={{
-            title: "Contatos",
+            title: "Contato",
             headerStyle: {
               backgroundColor: '#000'
             },
