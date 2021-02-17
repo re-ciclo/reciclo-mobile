@@ -43,7 +43,7 @@ export default function App() {
   return (
     <NavigationContainer>
 
-      <Drawer.Navigator initialRouteName="Cadastros">
+      <Drawer.Navigator initialRouteName="Home">
 
 
         <Drawer.Screen name="Home" component={Home}
