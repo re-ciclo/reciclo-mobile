@@ -1,15 +1,16 @@
 // Libraries
 
 import React from 'react';
-import {Card, Paragraph, Title } from 'react-native-paper';
-import {StyleSheet,
-        Text,
-        View,
-        Image,
-        TextInput,
-        TouchableOpacity,
-        StatusBar
-    } from 'react-native';
+import { Card, Paragraph, Title } from 'react-native-paper';
+import {
+    StyleSheet,
+    Text,
+    View,
+    Image,
+    TextInput,
+    TouchableOpacity,
+    StatusBar
+} from 'react-native';
 
 
 // Icones 
@@ -25,64 +26,71 @@ const rocket = <FA name="rocket" size={30} color="#fff" />;
 const book = <IO name="ios-book" size={30} color="#fff" />;
 const person = <IO name="person" size={30} color="#fff" />;
 
-const Informativo = ({navigation}) => {    
+const Informativo = ({ navigation }) => {
 
-    return(
+    return (
         <View style={styles.container}>
 
-            <View style={styles.menu}>
+            <View style={styles.areaMenu}>
+
+                <View style={styles.areaTituloMenu}>
+
+                    <Text style={styles.textoMenu}>Informativos</Text>
+                </View>
+                <View style={styles.iconMenu}>
                     <TouchableOpacity onPress={() => navigation.openDrawer()}>{menu}</TouchableOpacity>
+                </View>
             </View>
 
-            <View style={styles.main}>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                <Text style={styles.h1}>Informativos</Text>                
+            <View style={styles.main}>
+                <Text style={styles.h1}>Informativos</Text>
 
                 <Title style={styles.title}>Você sabe qual a cor de cada lixeira?</Title>
-                          
+
                 <View style={styles.content}>
 
                     <Card style={styles.center}>
-                        <Card.Cover style={styles.image} 
+                        <Card.Cover style={styles.image}
                             source={{ uri: 'https://imgur.com/IypLPgx.png' }} />
                     </Card>
 
                     <Text style={styles.text}>
-                        <Paragraph>Cada cor é referente ao tipo de material que está sendo descartado: </Paragraph>                           
+                        <Paragraph>Cada cor é referente ao tipo de material que está sendo descartado: </Paragraph>
                     </Text>
-                    
+
                     <Paragraph style={styles.red}>Vermelho - Plástico:
                         <Text >
-                            <Paragraph> frascos e garrafas PET, potes de alimentos, embalagens, sacos plásticos em geral, 
-                            tubos e conexões, peças de brinquedos, engradados de bebidas, baldes... </Paragraph>                           
-                        </Text>                        
+                            <Paragraph> frascos e garrafas PET, potes de alimentos, embalagens, sacos plásticos em geral,
+                            tubos e conexões, peças de brinquedos, engradados de bebidas, baldes... </Paragraph>
+                        </Text>
                     </Paragraph>
 
                     <Paragraph style={styles.blue}>Azul - Papel:
                         <Text >
-                            <Paragraph> aparas de papel, jornais, revistas, caixas, papelão, papel de fax, formulários de 
-                            computador, folhas de caderno, cartolinas, cartões, rascunhos escritos, envelopes, fotocópias, 
-                            folhetos, impressos em geral.</Paragraph>                           
-                        </Text>                        
+                            <Paragraph> aparas de papel, jornais, revistas, caixas, papelão, papel de fax, formulários de
+                            computador, folhas de caderno, cartolinas, cartões, rascunhos escritos, envelopes, fotocópias,
+                            folhetos, impressos em geral.</Paragraph>
+                        </Text>
                     </Paragraph>
 
                     <Paragraph style={styles.green}>Verde - Vidro:
                         <Text >
-                            <Paragraph> tampas, potes, frascos, garrafas de bebidas, copos, embalagens...</Paragraph>                           
-                        </Text>                        
+                            <Paragraph> tampas, potes, frascos, garrafas de bebidas, copos, embalagens...</Paragraph>
+                        </Text>
                     </Paragraph>
 
                     <Paragraph style={styles.brown}>Marrom - Orgânicos:
                         <Text >
-                            <Paragraph> restos de alimentos (carne, vegetais, frutas, ossos), sacos de 
-                            café e chá, cascas de ovos e sementes, folhas, caule, madeira...</Paragraph>                           
-                        </Text>                        
+                            <Paragraph> restos de alimentos (carne, vegetais, frutas, ossos), sacos de
+                            café e chá, cascas de ovos e sementes, folhas, caule, madeira...</Paragraph>
+                        </Text>
                     </Paragraph>
 
                     <Paragraph style={styles.yellow}>Amarelo - Metal:
                         <Text >
-                            <Paragraph> latas de alumínio (ex. latas de bebidas), latas de aço (ex. latas de óleo, 
-                            sardinha, molho de tomate), tampas, ferragens, canos, esquadrias e molduras de quadros...</Paragraph>                           
-                        </Text>                        
+                            <Paragraph> latas de alumínio (ex. latas de bebidas), latas de aço (ex. latas de óleo,
+                            sardinha, molho de tomate), tampas, ferragens, canos, esquadrias e molduras de quadros...</Paragraph>
+                        </Text>
                     </Paragraph>
                 </View>
 
@@ -90,14 +98,14 @@ const Informativo = ({navigation}) => {
                 <View style={styles.content}>
 
                     <Card style={styles.center}>
-                        <Card.Cover style={styles.image} 
+                        <Card.Cover style={styles.image}
                             source={{ uri: 'https://imgur.com/beYoGYZ.jpg' }} />
                     </Card>
 
                     <Text style={styles.text}>
-                        <Paragraph>Reciclar embalagens usadas, ou outros materiais, traz diversas vantagens ambientais e econômicas: </Paragraph>                           
+                        <Paragraph>Reciclar embalagens usadas, ou outros materiais, traz diversas vantagens ambientais e econômicas: </Paragraph>
                     </Text>
-                    
+
                     <Paragraph>Reduz a acumulação de resíduos;</Paragraph>
 
                     <Paragraph>Evita a produção de novos produtos;</Paragraph>
@@ -114,10 +122,10 @@ const Informativo = ({navigation}) => {
 
             <View style={styles.footer}>
 
-            <View style={styles.box4}><TouchableOpacity onPress={() => navigation.navigate('Projetos')}>{home}</TouchableOpacity></View>
-                    <View style={styles.box1}><TouchableOpacity onPress={() => navigation.navigate('Informativo')}>{rocket}</TouchableOpacity></View>
-                    <View style={styles.box2}><TouchableOpacity onPress={() => navigation.navigate('AReciclo')}>{book}</TouchableOpacity></View>
-                    <View style={styles.box3}><TouchableOpacity onPress={() => navigation.navigate('Contatos')}>{person}</TouchableOpacity></View>
+                <View style={styles.box4}><TouchableOpacity onPress={() => navigation.navigate('Projetos')}>{home}</TouchableOpacity></View>
+                <View style={styles.box1}><TouchableOpacity onPress={() => navigation.navigate('Informativo')}>{rocket}</TouchableOpacity></View>
+                <View style={styles.box2}><TouchableOpacity onPress={() => navigation.navigate('AReciclo')}>{book}</TouchableOpacity></View>
+                <View style={styles.box3}><TouchableOpacity onPress={() => navigation.navigate('Contatos')}>{person}</TouchableOpacity></View>
             </View>
         </View>
     );
@@ -126,20 +134,36 @@ const Informativo = ({navigation}) => {
 export default Informativo;
 
 const styles = StyleSheet.create({
-       container:{
-        flex:1,
+    container: {
+        flex: 1,
         backgroundColor: '#fff',
-        width:'100%',
-        height:'100%',
-        flexDirection:'column'
+        width: '100%',
+        height: '100%',
+        flexDirection: 'column'
     },
-    menu:{
-        backgroundColor:'#00B9A3',
+    areaMenu: {
+        flexDirection: 'row',
+        paddingRight: 5,
+        backgroundColor: '#00B9A3',
         justifyContent: 'flex-end',
-        alignItems: 'flex-end',
-        height: '40px',
+        alignItems: 'center',
+        height: 40
     },
-    main:{
+    areaTituloMenu: {
+        width: '55%',
+        justifyContent: 'center',
+        marginEnd: 2,
+    },
+
+    textoMenu: {
+        color: '#fff',
+        fontSize: 20,
+        fontFamily: 'Arial'
+    },
+    areaIconMenu: {
+        width: '10%'
+    },
+    main: {
         justifyContent: 'space-between',
         alignItems: 'center',
     },
@@ -149,14 +173,14 @@ const styles = StyleSheet.create({
     },
     center: {
         alignItems: 'center',
-    },    
-    h1:{
+    },
+    h1: {
         marginTop: 10,
-        fontSize:32
+        fontSize: 32
     },
     title: {
         marginTop: 30,
-    }, 
+    },
     buttons: {
         flexDirection: 'row',
     },
@@ -172,7 +196,7 @@ const styles = StyleSheet.create({
     text: {
         marginTop: 18,
         marginBottom: 10,
-        flexDirection: 'column',        
+        flexDirection: 'column',
     },
     red: {
         color: 'red',
@@ -194,7 +218,7 @@ const styles = StyleSheet.create({
         color: '#F5C302',
         fontWeight: 'bold',
     },
-    content:{    
+    content: {
         padding: 15,
-    },    
+    },
 })
