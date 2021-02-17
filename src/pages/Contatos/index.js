@@ -1,6 +1,6 @@
 // Libraries
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
     StyleSheet,
     Text,
@@ -10,7 +10,7 @@ import {
     TouchableOpacity,
     StatusBar,
 } from 'react-native';
-import {Picker} from '@react-native-picker/picker';
+import { Picker } from '@react-native-picker/picker';
 
 
 // Icones 
@@ -34,26 +34,33 @@ const Contatos = ({ navigation }) => {
     const [assunto, setAssunto] = React.useState("");
     const [mensagem, setMensagem] = React.useState("");
 
-    
-    const [assuntos, setAssuntos] = useState(['','Quero fazer parte do projeto','Sugestão','Elogio','Reclamação'])
+
+    const [assuntos, setAssuntos] = useState(['', 'Quero fazer parte do projeto', 'Sugestão', 'Elogio', 'Reclamação'])
     const [assuntoSelecionado, setAssuntoSelecionado] = useState([])
 
-    function enviar(){
+    function enviar() {
         alert('.')
     }
 
     return (
         <View style={styles.container}>
 
-            <View style={styles.menu}>
-                <TouchableOpacity onPress={() => navigation.openDrawer()}>{menu}</TouchableOpacity>
+            <View style={styles.areaMenu}>
+
+                <View style={styles.areaTituloMenu}>
+
+                    <Text style={styles.textoMenu}>Contatos</Text>
+                </View>
+                <View style={styles.iconMenu}>
+                    <TouchableOpacity onPress={() => navigation.openDrawer()}>{menu}</TouchableOpacity>
+                </View>
             </View>
 
             <View style={styles.main}>
-                
+
 
                 <View style={styles.block1}>
-                <Text style={styles.h1}>Contatos</Text>
+                    <Text style={styles.h1}>Contatos</Text>
 
                     <TextInput
                         style={styles.input}
@@ -83,18 +90,18 @@ const Contatos = ({ navigation }) => {
                             <Text>Escolha um dos assuntos abaixo:</Text>
                         </View>
 
-                            <Picker
-                                style={styles.pickerSelect}
-                                selectedValue={assuntoSelecionado}
-                                onValueChange={(itemValue) =>
-                                    setAssuntoSelecionado(itemValue)
-                                }>
-                                {
-                                    assuntos.map(as => {
-                                        return <Picker.Item label={as} value={as} />
-                                    })
-                                }
-                            </Picker>
+                        <Picker
+                            style={styles.pickerSelect}
+                            selectedValue={assuntoSelecionado}
+                            onValueChange={(itemValue) =>
+                                setAssuntoSelecionado(itemValue)
+                            }>
+                            {
+                                assuntos.map(as => {
+                                    return <Picker.Item label={as} value={as} />
+                                })
+                            }
+                        </Picker>
 
                         <View>
                             <Text style={styles.textSelect}>O assunto selecionado foi: {assuntoSelecionado}</Text>
@@ -113,34 +120,23 @@ const Contatos = ({ navigation }) => {
                         style={styles.textarea}
                         multiline={true}
                         numberOfLines={4}
-                        
+
                         placeholder="Digite a mensagem..."
                         value={mensagem}
                         onChange={(event) => { setMensagem(event.target.value) }}
                     />
 
                     <TouchableOpacity
-                    style={styles.btn}
-                    title="Enviar"
-                    onPress={enviar}
+                        style={styles.btn}
+                        title="Enviar"
+                        onPress={enviar}
                     >
-            
-                     <Text style={styles.texto}>Enviar</Text>
+
+                        <Text style={styles.texto}>Enviar</Text>
                     </TouchableOpacity>
 
                 </View>
-
-
             </View>
-
-            {/* <View style={styles.footer}>
-
-                    <View style={styles.box4}><TouchableOpacity onPress={() => navigation.navigate('Projetos')}>{home}</TouchableOpacity></View>
-                    <View style={styles.box1}><TouchableOpacity onPress={() => navigation.navigate('Informativo')}>{rocket}</TouchableOpacity></View>
-                    <View style={styles.box2}><TouchableOpacity onPress={() => navigation.navigate('AReciclo')}>{book}</TouchableOpacity></View>
-                    <View style={styles.box3}><TouchableOpacity onPress={() => navigation.navigate('Contatos')}>{person}</TouchableOpacity></View>
-            </View> */}
-
         </View>
     );
 }
@@ -155,11 +151,27 @@ const styles = StyleSheet.create({
         height: '100%',
         flexDirection: 'column'
     },
-    menu: {
+    areaMenu: {
+        flexDirection: 'row',
+        paddingRight: 5,
         backgroundColor: '#00B9A3',
         justifyContent: 'flex-end',
-        alignItems: 'flex-end',
-        height: '40px',
+        alignItems: 'center',
+        height: 40
+    },
+    areaTituloMenu: {
+        width: '50%',
+        justifyContent: 'center',
+        marginEnd: 2,
+    },
+
+    textoMenu: {
+        color: '#fff',
+        fontSize: 20,
+        fontFamily: 'Arial'
+    },
+    areaIconMenu: {
+        width: '10%'
     },
     h1: {
         fontSize: 32
@@ -168,7 +180,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        height: '580px'
+        height: 580
     },
 
     block1: {
@@ -202,30 +214,30 @@ const styles = StyleSheet.create({
         paddingLeft: 5
     },
     btn: {
-        marginTop:12,
+        marginTop: 12,
         width: '50%',
         height: '7%',
-        borderRadius:5,
+        borderRadius: 5,
         justifyContent: 'space-around',
         alignItems: 'center',
         backgroundColor: '#00B9A3'
-        
-      },
-      texto:{
+
+    },
+    texto: {
         color: '#fff',
         fontSize: 20
-      },
+    },
 
-      select: {
+    select: {
         alignItems: "center",
         marginTop: 12
-      },
-      pickerSelect: {
+    },
+    pickerSelect: {
         marginTop: 15,
         shadowRadius: 2,
-      },
-      textSelect: {
-          marginTop: 12
-      }
+    },
+    textSelect: {
+        marginTop: 12
+    }
 
 })
