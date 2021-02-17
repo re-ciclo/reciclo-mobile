@@ -214,8 +214,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         width: '100%',
-        backgroundImage: 'linear-gradient(#fff, #000)',
-        height: '120px',
+        // backgroundImage: 'linear-gradient(#fff, #000)',
+        height: 120,
         flexDirection: 'row'
 
     },
