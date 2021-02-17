@@ -3,14 +3,12 @@
 import React from 'react';
 import {
     StyleSheet,
-    Text,
     View,
-    ImageBackground,
-    Image,
-    TextInput,
     TouchableOpacity,
-    StatusBar
+    StatusBar,
+    Linking
 } from 'react-native';
+import { Avatar, Card, Title, Paragraph } from 'react-native-paper';
 
 
 
@@ -22,7 +20,7 @@ import IO from 'react-native-vector-icons/Ionicons';
 
 const voltar = <IO name="arrow-undo" size={25} color="#fff" />;
 
-
+const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
 // AsyncStorage
 import AsyncStorage from '@react-native-community/async-storage';
@@ -30,13 +28,96 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 const Mundo = ({ navigation }) => {
 
-
     return (
         <View style={styles.container}>
-
             <View style={styles.menu}>
                 <TouchableOpacity onPress={() => navigation.navigate('Ambiente')}>{voltar}</TouchableOpacity>
-            </View>
+            </View >
+
+            <Card style={styles.border}>
+                <Card.Content>
+                    <Title>
+                        Maior dificuldade para a reciclagem no Brasil é a desinformação <hr />
+                    </Title>
+                </Card.Content >
+
+                <TouchableOpacity onPress={() => Linking.openURL('https://www.bio3consultoria.com.br/dificuldade-de-reciclagem/')}>
+                    <Card.Cover source={require('../../../assets/bio3.png')} style={styles.cardImg} />
+                </TouchableOpacity>
+
+                <Paragraph style={styles.textP} >
+                    <em> 66% dos brasileiros afirmam saber pouco ou nada sobre coleta seletiva e 28% não sabem citar quais são as
+                    cores das lixeiras para coleta do material</em>
+                </Paragraph>
+            </Card>
+
+            <Card style={styles.border}>
+                <Card.Content>
+                    <Title> 
+                        5 fatos sobre sustentabilidade que você precisa saber<hr />
+                    </Title>
+                </Card.Content >
+
+                <TouchableOpacity onPress={() => Linking.openURL('https://aguasustentavel.org.br/publicacoes/blog/53-5-fato-sobre-sustentabilidade-que-vc-precisa-saber?gclid=Cj0KCQiA962BBhCzARIsAIpWEL3iHdUWZ14S8puICD0GGf91lMHyPyGNG4SMPGVpaUFGS8qFw3UoubgaAp5OEALw_wcB')}>
+                    <Card.Cover source={require('../../../assets/aguasustentavel1.png')} style={styles.cardImg} />
+                </TouchableOpacity>
+
+                <Paragraph style={styles.textP} > 
+                    <em> Reciclamos apenas 3% de todo o lixo que é recolhido no Brasil,
+                    sendo que 30% poderia ser reaproveitado</em>
+                </Paragraph>
+            </Card>
+
+            <Card style={styles.border}>
+                <Card.Content>
+                    <Title>
+                        Panorama abrelpe 2020<hr />
+                    </Title>
+                </Card.Content >
+
+                <TouchableOpacity onPress={() => Linking.openURL('https://abrelpe.org.br/panorama/')}>
+                    <Card.Cover source={require('../../../assets/abrelp1.jpg')} style={styles.cardImg} />
+                </TouchableOpacity>
+
+                <Paragraph style={styles.textP} >  
+                    <em> Nessa edição você acompanha dados inéditos do setor
+                    de resíduos sólidos urbanos no Brasil</em>
+                </Paragraph>
+            </Card>
+
+            <Card style={styles.border}>
+                <Card.Content>
+                    <Title>
+                        30% do lixo que chega aos aterros poderia ser reciclado<hr />
+                    </Title>
+                </Card.Content >
+
+                <TouchableOpacity onPress={() => Linking.openURL('https://ci.eco.br/cerca-de-30-por-cento-do-lixo-poderia-ser-reciclado/')}>
+                    <Card.Cover source={require('../../../assets/cidadesinteligentes.jpg')} style={styles.cardImg} />
+                </TouchableOpacity>
+
+                <Paragraph style={styles.textP} > 
+                    <em> Reciclamos apenas 3% de todo o lixo que é recolhido no Brasil,
+                    sendo que 30% poderia ser reaproveitado</em>
+                </Paragraph>
+            </Card>
+
+            <Card style={styles.border}>
+                <Card.Content>
+                    <Title>
+                        Pesquisa revela a percepção dos brasileiros sobre o meio ambiente<hr />
+                    </Title>
+                </Card.Content >
+
+                <TouchableOpacity onPress={() => Linking.openURL('https://observatorio3setor.org.br/noticias/pesquisa-revela-a-percepcao-dos-brasileiros-sobre-o-meio-ambiente/')}>
+                    <Card.Cover source={require('../../../assets/observatorio1.jpg')} style={styles.cardImg} />
+                </TouchableOpacity>
+
+                <Paragraph style={styles.textP} > 
+                    <em> Apesar de 78% considerarem importante a questão do aquecimento global, apenas 25% 
+                        informaram saber muito sobre o assunto</em>
+                </Paragraph>
+            </Card>
 
         </View>
     );
@@ -50,7 +131,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         width: '100%',
         height: '100%',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        marginBottom: 10,
+        marginTop: 10,
+        marginLeft: 2,
+        marginRight: 2
     },
     menu: {
         paddingRight: 5,
@@ -59,125 +144,22 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
         height: 40
     },
-    h1: {
-        fontSize: 32
+    cardImg: {
+        marginLeft: 5,
+        marginRight: 5
     },
-    main: {
-
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 500,
+    textP: {
+        marginLeft: 5,
+        marginRight: 5
     },
-    block1: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        width: '100%',
-        height: '100%',
-        // backgroundColor: '#c3c3c3',
-    },
-    logo: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        width: 150,
-        height: 150,
-        backgroundColor: '#fff',
-        borderRadius: 100,
-        shadowOpacity: 1,
-        shadowRadius: 6.68,
-        elevation: 11,
-        marginBottom: 70
-    },
-    input: {
-        marginTop: 12,
-        paddingLeft: 5,
-        fontSize: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '7%',
-        width: '80%',
-        backgroundColor: '#fff',
-        borderRadius: 5,
-        shadowOpacity: 1,
-        shadowRadius: 6.68,
-        elevation: 11,
-        borderRadius: 5
-    },
-    btn: {
-        marginTop: 12,
-        width: '50%',
-        height: '7%',
-        borderRadius: 5,
-        alignItems: 'center',
-        backgroundColor: '#00B9A3'
-
-    },
-    texto1: {
-        color: '#fff',
-        fontSize: 20
-
-    },
-    texto2: {
-        marginTop: 12,
-        fontSize: 16,
-        color: '#00B9A3'
-    },
-    footer: {
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        width: '100%',
-        backgroundImage: 'linear-gradient(#fff, #000)',
-        height: '120px',
-        flexDirection: 'row'
-
-    },
-    box1: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '20%',
-        height: '45%',
-        backgroundColor: '#00B9A3',
-        borderRadius: 5,
-        shadowOpacity: 1,
-        shadowRadius: 6.68,
-        elevation: 11,
-    }
-    ,
-    box2: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '20%',
-        height: '45%',
-        backgroundColor: '#00B9A3',
-        borderRadius: 5,
-        shadowOpacity: 1,
-        shadowRadius: 6.68,
-        elevation: 11,
-    },
-
-    box3: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '20%',
-        height: '45%',
-        backgroundColor: '#00B9A3',
-        borderRadius: 5,
-        shadowOpacity: 1,
-        shadowRadius: 6.68,
-        elevation: 11,
-    },
-
-    box4: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '20%',
-        height: '45%',
-        backgroundColor: '#00B9A3',
-        borderRadius: 5,
-        shadowOpacity: 1,
-        shadowRadius: 6.68,
-        elevation: 11
+    border: {
+        borderRadius: 10,
+        shadowOpacity: 0.6,
+        shadowRadius: 4.68,
+        elevation: 1,
+        marginTop: 8,
+        marginBottom: 4,
+        backgroundColor: '#F8F9FA'
     }
 
 })
