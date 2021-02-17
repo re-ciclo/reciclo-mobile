@@ -42,7 +42,7 @@ import Sair from './src/pages/Sair';
 export default function App() {
   return (
     <NavigationContainer>
-
+      
       <Drawer.Navigator initialRouteName="Home">
 
 
@@ -110,7 +110,7 @@ export default function App() {
 
         <Drawer.Screen name="Ambiente" component={Ambiente}
           options={{
-            title: "Ambiente",
+            title: "",
             headerStyle: {
               backgroundColor: '#f4511e'
 
@@ -121,7 +121,7 @@ export default function App() {
 
         <Drawer.Screen name="Resultados" component={Resultados}
           options={{
-            title: "Resultados",
+            title: "",
             headerStyle: {
               backgroundColor: '#f4511e'
 
@@ -132,7 +132,7 @@ export default function App() {
 
         <Drawer.Screen name="Eventos" component={Eventos}
           options={{
-            title: "Eventos",
+            title: "",
             headerStyle: {
               backgroundColor: '#f4511e'
 
@@ -143,7 +143,7 @@ export default function App() {
 
         <Drawer.Screen name="Dados" component={Dados}
           options={{
-            title: "Dados",
+            title: "",
             headerStyle: {
               backgroundColor: '#f4511e'
 
@@ -154,7 +154,7 @@ export default function App() {
 
         <Drawer.Screen name="Mundo" component={Mundo}
           options={{
-            title: "Mundo",
+            title: "",
             headerStyle: {
               backgroundColor: '#f4511e'
 
