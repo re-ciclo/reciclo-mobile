@@ -58,8 +58,15 @@ const Cadastros = ({ navigation }) => {
     return (
         <View style={styles.container}>
 
-            <View style={styles.menu}>
-                <TouchableOpacity onPress={() => navigation.openDrawer()}>{menu}</TouchableOpacity>
+            <View style={styles.areaMenu}>
+
+                <View style={styles.areaTituloMenu}>
+
+                    <Text style={styles.textoMenu}>Cadastros</Text>
+                </View>
+                <View style={styles.iconMenu}>
+                    <TouchableOpacity onPress={() => navigation.openDrawer()}>{menu}</TouchableOpacity>
+                </View>
             </View>
 
             <View style={styles.main}>
@@ -110,7 +117,7 @@ const Cadastros = ({ navigation }) => {
                 </View>
 
                 <View style={styles.block1}>
-                <TextInput
+                    <TextInput
                         style={styles.input}
                         placeholder="00000-000"
                         value={cep}
@@ -127,38 +134,41 @@ const Cadastros = ({ navigation }) => {
                     />
 
                     <View style={styles.block2}>
-                    <TextInput
-                        style={{marginTop: 12,
-                            marginRight: 6,
-                            padding: '9px',
-                            width: '70%',
-                            backgroundColor: '#fff',
-                            borderRadius: 5,
-                            alignItems: 'center'}}
-                        placeholder="Digite o logradouro..."
-                        value={logradouro}
-                        onChange={(event) => { setLogradouro(event.target.value) }}
-
-                    />
-
-                    <TextInput
-                        style={{marginTop: 12,
-                             padding: '9px',
-                             alignItems: 'center',
-                             width: '10%',
-                             backgroundColor: '#fff',
-                             borderRadius: 5,
+                        <TextInput
+                            style={{
+                                marginTop: 12,
+                                marginRight: 6,
+                                padding: 9,
+                                width: '70%',
+                                backgroundColor: '#fff',
+                                borderRadius: 5,
+                                alignItems: 'center'
                             }}
-                        placeholder="Nº"
-                        value={numero}
-                        onChange={(event) => { setNumero(event.target.value) }}
+                            placeholder="Digite o logradouro..."
+                            value={logradouro}
+                            onChange={(event) => { setLogradouro(event.target.value) }}
 
-                    />   
+                        />
 
-                    
+                        <TextInput
+                            style={{
+                                marginTop: 12,
+                                padding: 9,
+                                alignItems: 'center',
+                                width: '10%',
+                                backgroundColor: '#fff',
+                                borderRadius: 5,
+                            }}
+                            placeholder="Nº"
+                            value={numero}
+                            onChange={(event) => { setNumero(event.target.value) }}
+
+                        />
+
+
 
                     </View>
-                    
+
                     <TextInput
                         style={styles.input}
                         placeholder="Digite o complemento..."
@@ -168,48 +178,52 @@ const Cadastros = ({ navigation }) => {
                     />
                 </View>
 
-               
+
 
                 <View style={styles.block2}>
-                <TextInput
-                        style={{marginTop: 12,
+                    <TextInput
+                        style={{
+                            marginTop: 12,
                             marginRight: 6,
-                            padding: '9px',
+                            padding: 9,
                             width: '70%',
                             backgroundColor: '#fff',
                             borderRadius: 5,
-                            alignItems: 'center'}}
+                            alignItems: 'center'
+                        }}
                         placeholder="Digite a cidade..."
                         value={cidade}
                         onChange={(event) => { setCidade(event.target.value) }}
                     />
 
                     <TextInput
-                        style={{marginTop: 12,
+                        style={{
+                            marginTop: 12,
                             marginRight: 6,
-                            padding: '9px',
+                            padding: 9,
                             width: '10%',
                             backgroundColor: '#fff',
                             borderRadius: 5,
-                            alignItems: 'center'}}
+                            alignItems: 'center'
+                        }}
                         placeholder="UF"
                         value={uf}
                         onChange={(event) => { setUf(event.target.value) }}
                     />
 
-                    
-                </View>  
+
+                </View>
 
                 <TouchableOpacity
-                        style={styles.btn}
-                        title="Enviar"
-                        onPress={enviar}
-                    >
-                        <Text style={styles.texto}>Enviar</Text>
-                    </TouchableOpacity>
+                    style={styles.btn}
+                    title="Enviar"
+                    onPress={enviar}
+                >
+                    <Text style={styles.texto}>Enviar</Text>
+                </TouchableOpacity>
 
-            </View> 
-        </View> 
+            </View>
+        </View>
     );
 }
 
@@ -222,12 +236,27 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         flexDirection: 'column'
-    },
-    menu: {
+    },areaMenu:{
+        flexDirection:'row',
+        paddingRight: 5,
         backgroundColor: '#00B9A3',
         justifyContent: 'flex-end',
-        alignItems: 'flex-end',
-        height: '40px',
+        alignItems: 'center',
+        height: 40
+    },
+areaTituloMenu: {
+        width:'50%',
+        justifyContent:'center',
+        marginEnd: 2,
+    },
+
+textoMenu:{
+        color: '#fff',
+        fontSize: 20,
+        fontFamily:'Arial'
+    },
+areaIconMenu:{
+        width:'10%'
     },
     h1: {
         fontSize: 32
@@ -236,7 +265,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        height: '600px',
+        height: 600,
         backgroundColor: '#c3c3c3',
     },
 
@@ -245,24 +274,24 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'column',
         width: '100%',
-        
+
     },
 
     block2: {
         flexDirection: 'row',
         justifyContent: 'center',
         width: '100%',
-        
-       
+
+
     },
     input: {
         marginTop: 12,
-        padding: '9px',
+        padding: 9,
         width: '80%',
         backgroundColor: '#fff',
         borderRadius: 5,
         alignItems: 'center',
-        
+
     },
     btn: {
         marginTop: 12,
