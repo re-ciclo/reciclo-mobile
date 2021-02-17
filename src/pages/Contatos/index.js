@@ -1,6 +1,6 @@
 // Libraries
 
-import React from 'react';
+import React, {useState} from 'react';
 import {
     StyleSheet,
     Text,
@@ -8,8 +8,9 @@ import {
     Image,
     TextInput,
     TouchableOpacity,
-    StatusBar
+    StatusBar,
 } from 'react-native';
+import {Picker} from '@react-native-picker/picker';
 
 
 // Icones 
@@ -25,10 +26,6 @@ const rocket = <FA name="rocket" size={30} color="#fff" />;
 const book = <IO name="ios-book" size={30} color="#fff" />;
 const person = <IO name="person" size={30} color="#fff" />;
 
-
-
-
-
 const Contatos = ({ navigation }) => {
 
     const [nome, setNome] = React.useState("");
@@ -36,6 +33,10 @@ const Contatos = ({ navigation }) => {
     const [telefone, setTelefone] = React.useState("");
     const [assunto, setAssunto] = React.useState("");
     const [mensagem, setMensagem] = React.useState("");
+
+    
+    const [assuntos, setAssuntos] = useState(['','Quero fazer parte do projeto','Sugestão','Elogio','Reclamação'])
+    const [assuntoSelecionado, setAssuntoSelecionado] = useState([])
 
     function enviar(){
         alert('.')
@@ -74,17 +75,39 @@ const Contatos = ({ navigation }) => {
                         placeholder="Digite o seu telefone..."
                         value={telefone}
                         onChange={(event) => { setTelefone(event.target.value) }}
-
-
                     />
 
-                    <TextInput
+                    <View style={styles.select}>
+
+                        <View style={styles.textSelect}>
+                            <Text>Escolha um dos assuntos abaixo:</Text>
+                        </View>
+
+                            <Picker
+                                style={styles.pickerSelect}
+                                selectedValue={assuntoSelecionado}
+                                onValueChange={(itemValue) =>
+                                    setAssuntoSelecionado(itemValue)
+                                }>
+                                {
+                                    assuntos.map(as => {
+                                        return <Picker.Item label={as} value={as} />
+                                    })
+                                }
+                            </Picker>
+
+                        <View>
+                            <Text style={styles.textSelect}>O assunto selecionado foi: {assuntoSelecionado}</Text>
+                        </View>
+
+                    </View>
+
+                    {/* <TextInput
                         style={styles.input}
                         placeholder="Digite o assunto..."
                         value={assunto}
                         onChange={(event) => { setAssunto(event.target.value) }}
-
-                    />
+                    /> */}
 
                     <TextInput
                         style={styles.textarea}
@@ -94,15 +117,14 @@ const Contatos = ({ navigation }) => {
                         placeholder="Digite a mensagem..."
                         value={mensagem}
                         onChange={(event) => { setMensagem(event.target.value) }}
-
                     />
 
                     <TouchableOpacity
                     style={styles.btn}
                     title="Enviar"
                     onPress={enviar}
-                    
                     >
+            
                      <Text style={styles.texto}>Enviar</Text>
                     </TouchableOpacity>
 
@@ -166,7 +188,8 @@ const styles = StyleSheet.create({
         height: '7%',
         width: '80%',
         backgroundColor: '#fff',
-        borderRadius: 5
+        borderRadius: 5,
+        paddingLeft: 5
     },
     textarea: {
         marginTop: 12,
@@ -175,7 +198,8 @@ const styles = StyleSheet.create({
         height: '21%',
         width: '80%',
         backgroundColor: '#fff',
-        borderRadius: 5
+        borderRadius: 5,
+        paddingLeft: 5
     },
     btn: {
         marginTop:12,
@@ -190,7 +214,18 @@ const styles = StyleSheet.create({
       texto:{
         color: '#fff',
         fontSize: 20
-      }
+      },
 
+      select: {
+        alignItems: "center",
+        marginTop: 12
+      },
+      pickerSelect: {
+        marginTop: 15,
+        shadowRadius: 2,
+      },
+      textSelect: {
+          marginTop: 12
+      }
 
 })
