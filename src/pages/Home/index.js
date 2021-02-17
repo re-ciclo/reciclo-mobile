@@ -47,7 +47,23 @@ const Home = ({ navigation }) => {
 
         
          navigation.navigate('Ambiente')
-         AsyncStorage.setItem('user', 'Fulano');
+
+         AsyncStorage.setItem('nome', 'Fulano');
+         AsyncStorage.setItem('email', 'fulano@gmail.com');
+         AsyncStorage.setItem('telefone', '(11) 3333-3333');
+         AsyncStorage.setItem('senha', '•••••');
+
+
+         AsyncStorage.setItem('cep', '05000-090');
+         AsyncStorage.setItem('bairro', 'Maracanã');
+         AsyncStorage.setItem('logradouro', 'Rua Vitória');
+         AsyncStorage.setItem('numero', '10');
+         AsyncStorage.setItem('complemento', 'Bloco 1');
+         AsyncStorage.setItem('cidade', 'São Paulo');
+         AsyncStorage.setItem('uf', 'SP');
+
+
+
     }
 
 
@@ -230,7 +246,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         shadowOpacity: 1,
         shadowRadius: 6.68,
-        elevation: 11,
+        elevation: 11
     },
 
     box3: {
