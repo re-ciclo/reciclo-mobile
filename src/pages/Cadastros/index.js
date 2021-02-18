@@ -137,12 +137,12 @@ const Cadastros = ({ navigation }) => {
                         <TextInput
                             style={{
                                 marginTop: 12,
-                                marginRight: 6,
+                               
                                 padding: 9,
-                                width: '70%',
+                                width: '60%',
                                 backgroundColor: '#fff',
                                 borderRadius: 5,
-                                alignItems: 'center'
+                               
                             }}
                             placeholder="Digite o logradouro..."
                             value={logradouro}
@@ -154,8 +154,8 @@ const Cadastros = ({ navigation }) => {
                             style={{
                                 marginTop: 12,
                                 padding: 9,
-                                alignItems: 'center',
-                                width: '10%',
+                                marginLeft: 1,
+                                width: '20%',
                                 backgroundColor: '#fff',
                                 borderRadius: 5,
                             }}
@@ -184,12 +184,11 @@ const Cadastros = ({ navigation }) => {
                     <TextInput
                         style={{
                             marginTop: 12,
-                            marginRight: 6,
                             padding: 9,
                             width: '70%',
                             backgroundColor: '#fff',
                             borderRadius: 5,
-                            alignItems: 'center'
+                            
                         }}
                         placeholder="Digite a cidade..."
                         value={cidade}
@@ -199,12 +198,12 @@ const Cadastros = ({ navigation }) => {
                     <TextInput
                         style={{
                             marginTop: 12,
-                            marginRight: 6,
                             padding: 9,
                             width: '10%',
+                            marginLeft: 1,
                             backgroundColor: '#fff',
                             borderRadius: 5,
-                            alignItems: 'center'
+                           
                         }}
                         placeholder="UF"
                         value={uf}
@@ -290,8 +289,7 @@ areaIconMenu:{
         width: '80%',
         backgroundColor: '#fff',
         borderRadius: 5,
-        alignItems: 'center',
-
+    
     },
     btn: {
         marginTop: 12,
